@@ -1,0 +1,44 @@
+<head>
+  <title>pagemodel-visualizer</title>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+    <div class="container-fluid full-height">
+        <div class="row-fluid full-height">
+            <div class="span3 full-height">
+                {{> layoutList}}
+            </div>
+            <div class="span9 full-height" style="position: relative">
+                {{> layout}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="layoutList">
+    <div class="well full-height">
+        {{#each layouts}}
+        {{> layoutItem}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="layoutItem">
+    <span class="label layout-label" style="background: {{color}}">O</span>
+</template>
+
+<template name="layout">
+    <div class="layout-container">
+        {{#each layoutElements}}
+            {{! eventually, replace with different types of templates }}
+            <div class="layout-element"
+                 style="top: {{y}}px; left: {{x}}px; width: {{width}}px; height: {{height}}px">
+                 {{type}}
+            </div>
+        {{/each}}
+    </div>
+</template>
