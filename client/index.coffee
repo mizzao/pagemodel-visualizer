@@ -1,3 +1,5 @@
+Meteor.subscribe 'stuff'
+
 Template.layoutList.layouts = ->
   Layouts.find()
 

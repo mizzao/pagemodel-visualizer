@@ -5,6 +5,9 @@ Meteor.startup ->
   Elements._ensureIndex
     layoutId: 1
 
+Meteor.publish "stuff", ->
+    [Layouts.find(), Elements.find()]
+
 #Meteor.methods
 #  "setLayout": (idx, layout, elements) ->
 #    unless layout = Layouts.findOne(idx: idx)
